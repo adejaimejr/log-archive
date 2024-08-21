@@ -14,7 +14,7 @@ This project was inspired by a suggestion from [roadmap.sh](https://roadmap.sh/p
 ## Requirements
 - Linux-based system
 - Bash shell
-- `curl` installed (or `wget` as an alternative)
+- `curl` installed
 
 ## Installation
 
@@ -38,36 +38,12 @@ If `curl` is not installed on your Linux system, you can install it using the fo
   sudo dnf install curl
   ```
 
-If you prefer to use `wget`, which might already be installed:
-
-- **Debian/Ubuntu:**
-  ```bash
-  sudo apt update
-  sudo apt install wget
-  ```
-
-- **CentOS/RHEL:**
-  ```bash
-  sudo yum install wget
-  ```
-
-- **Fedora:**
-  ```bash
-  sudo dnf install wget
-  ```
-
 ### Run the Script Remotely
 
-To run the script remotely, use the following command in your terminal:
+To run the script remotely using `curl`, use the following command in your terminal:
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/adejaimejr/log-archive/main/log-archive.sh)
-```
-
-Alternatively, if you are using `wget`:
-
-```bash
-bash <(wget -qO- https://raw.githubusercontent.com/adejaimejr/log-archive/main/log-archive.sh)
+bash <(curl -s https://raw.githubusercontent.com/adejaimejr/log-archive/main/log-archive-interactive.sh)
 ```
 
 This command will download the script and run it directly in your shell, guiding you through the process of setting up the log archiving.
@@ -84,9 +60,9 @@ This command will download the script and run it directly in your shell, guiding
 If you prefer to install the script manually, you can download it and move it to `/usr/local/bin/`:
 
 ```bash
-curl -O https://raw.githubusercontent.com/adejaimejr/log-archive/main/log-archive.sh
-chmod +x log-archive.sh
-sudo mv log-archive.sh /usr/local/bin/log-archive.sh
+curl -O https://raw.githubusercontent.com/adejaimejr/log-archive/main/log-archive-interactive.sh
+chmod +x log-archive-interactive.sh
+sudo mv log-archive-interactive.sh /usr/local/bin/log-archive.sh
 ```
 
 Then, you can run the script with:
