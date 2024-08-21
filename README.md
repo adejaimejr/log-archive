@@ -33,3 +33,52 @@ If `curl` is not installed on your Linux system, you can install it using the fo
   ```bash
   sudo apt update
   sudo apt install curl
+  ```
+
+- **CentOS/RHEL:**
+  ```bash
+  sudo yum install curl
+  ```
+
+- **Fedora:**
+  ```bash
+  sudo dnf install curl
+  ```
+
+### Run the Script Remotely
+
+To run the script remotely using `curl`, use the following command in your terminal:
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/adejaimejr/log-archive/main/log-archive-interactive.sh)
+```
+
+This command will download the script and run it directly in your shell, guiding you through the process of setting up the log archiving.
+
+## How It Works
+
+1. **Specify Log Directory**: The script will prompt you to enter the log directory. The default is `/var/log`.
+2. **Specify Days to Keep Logs**: You will be asked how many days of logs you want to keep. Logs older than this will be archived and deleted.
+3. **Specify Days to Keep Backup Archives**: You will also be asked how long to keep the backup archives. Archives older than this will be automatically deleted.
+4. **Run Archiving**: The script will compress the logs, delete the old ones, and clean up any old backup archives based on your settings.
+5. **Optional Cron Setup**: After the archiving is completed, the script will ask if you want to set up a cron job for daily execution.
+
+## Manual Installation
+
+If you prefer to install the script manually, you can download it and move it to `/usr/local/bin/`:
+
+```bash
+curl -O https://raw.githubusercontent.com/adejaimejr/log-archive/main/log-archive-interactive.sh
+chmod +x log-archive-interactive.sh
+sudo mv log-archive-interactive.sh /usr/local/bin/log-archive.sh
+```
+
+Then, you can run the script with:
+
+```bash
+log-archive.sh
+```
+
+## License
+
+This project is licensed under the MIT License.
