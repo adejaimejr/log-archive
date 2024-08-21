@@ -68,3 +68,18 @@ while true; do
             ;;
     esac
 done
+
+# Setup cron job function
+setup_cron() {
+    read -p "Do you want to add this script to cron for daily execution? (y/n) " choice
+    if [[ "$choice" == "y" || "$choice" == "Y" ]]; then
+        cron_line="0 2 * * * /usr/local/bin/log-archive.sh"
+        (crontab -l 2>/dev/null; echo "$cron_line") | crontab -
+        echo "Cron job added: $cron_line"
+    else
+        echo "Cron job not added."
+    fi
+}
+
+# Call the cron setup function
+setup_cron
