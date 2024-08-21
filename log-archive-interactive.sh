@@ -6,21 +6,16 @@ prompt_for_input() {
     echo "${input:-$2}"
 }
 
-# Function to display a menu and handle the user's choice
-show_menu() {
+# Main interactive loop
+while true; do
     echo "1. Specify Log Directory"
     echo "2. Specify Number of Days to Keep Logs"
     echo "3. Run Log Archiving Process"
     echo "4. Exit"
     echo ""
-    read -r -p "Choose an option [1-4]: " choice
-    echo "$choice"
-}
 
-# Main interactive loop
-while true; do
-    choice=$(show_menu)
-    
+    read -r -p "Choose an option [1-4]: " choice
+
     case $choice in
         1)
             log_dir=$(prompt_for_input "Enter the log directory" "/var/log")
