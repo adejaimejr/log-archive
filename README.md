@@ -1,3 +1,5 @@
+# Log Archive Script
+
 ## Overview
 This script is designed to help you archive logs on a Linux server. It compresses logs older than a specified number of days and stores them in a designated archive directory. Additionally, it can be set up to run automatically at regular intervals using cron.
 
@@ -5,6 +7,9 @@ This script is designed to help you archive logs on a Linux server. It compresse
 - **Interactive CLI**: Guides the user through setting up the log directory and specifying how many days of logs to keep.
 - **Automated Archiving**: Compresses logs into `.tar.gz` format and stores them in an archive directory.
 - **Cron Integration**: Option to automatically add the script to `crontab` for daily execution.
+
+## Inspiration
+This project was inspired by a suggestion from [roadmap.sh](https://roadmap.sh/projects/log-archive-tool).
 
 ## Requirements
 - Linux-based system
