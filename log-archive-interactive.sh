@@ -2,7 +2,7 @@
 
 # Function to prompt for user input with a default option
 prompt_for_input() {
-    read -p "$1 [$2]: " input
+    read -r -p "$1 [$2]: " input
     echo "${input:-$2}"
 }
 
@@ -13,8 +13,8 @@ show_menu() {
     echo "3. Run Log Archiving Process"
     echo "4. Exit"
     echo ""
-    read -p "Choose an option [1-4]: " choice
-    echo $choice
+    read -r -p "Choose an option [1-4]: " choice
+    echo "$choice"
 }
 
 # Main interactive loop
@@ -71,7 +71,7 @@ done
 
 # Setup cron job function
 setup_cron() {
-    read -p "Do you want to add this script to cron for daily execution? (y/n) " choice
+    read -r -p "Do you want to add this script to cron for daily execution? (y/n) " choice
     if [[ "$choice" == "y" || "$choice" == "Y" ]]; then
         cron_line="0 2 * * * /usr/local/bin/log-archive.sh"
         (crontab -l 2>/dev/null; echo "$cron_line") | crontab -
