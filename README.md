@@ -1,20 +1,22 @@
-# Log Archive Interactive Script
-
-This repository contains a simple Bash script to archive log files on Linux systems. The script is designed to be user-friendly and interactive, guiding the user through the process of specifying a log directory, determining how many days of logs to keep, and running the archiving process.
+## Overview
+This script is designed to help you archive logs on a Linux server. It compresses logs older than a specified number of days and stores them in a designated archive directory. Additionally, it can be set up to run automatically at regular intervals using cron.
 
 ## Features
+- **Interactive CLI**: Guides the user through setting up the log directory and specifying how many days of logs to keep.
+- **Automated Archiving**: Compresses logs into `.tar.gz` format and stores them in an archive directory.
+- **Cron Integration**: Option to automatically add the script to `crontab` for daily execution.
 
-- **Interactive Interface:** The script prompts the user to specify the log directory and the number of days of logs to keep.
-- **Automated Archiving:** Logs older than the specified number of days are compressed into a `.tar.gz` file and stored in an archive directory.
-- **Cron Job Setup:** The script offers the option to automatically set up a cron job to run the archiving process daily.
+## Requirements
+- Linux-based system
+- Bash shell
 
-## How to Use
+## Installation
 
-### 1. Run the Script Locally
+You can execute the script directly from GitHub without needing to download it manually.
 
-To run the script locally:
+### Run the Script Remotely
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/adejaimejr/log-archive.git
-   cd log-archive
+To run the script remotely, use the following command in your terminal:
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/adejaimejr/log-archive/main/log-archive.sh)
